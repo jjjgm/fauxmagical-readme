@@ -1,11 +1,10 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require('./utils/generateMarkdown')
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // Prompting user for README information
-inquirer.prompt(
-    [
+let questions = [
         {
             type: 'input',
             message: 'Project Title:',
@@ -17,7 +16,7 @@ inquirer.prompt(
             name: 'description',
         },
         {
-            type: 'Y/N',
+            type: 'confirm',
             message: 'Would you like to add a Table of Contents?',
             name: 'tableOfContents',
         },
@@ -34,7 +33,7 @@ inquirer.prompt(
         {
             type: 'input',
             message: 'Contribution Guidelines:',
-            name: 'contribution',
+            name: 'contributions',
         },
         {
             type: 'input',
@@ -57,8 +56,7 @@ inquirer.prompt(
             message: 'Assets:',
             name: 'assets',
         } 
-    ]
-)
+]
 
 
 
@@ -81,8 +79,8 @@ function init() {
     .then((responses) => {
     const markdown = generateMarkdown(responses);
         console.log(responses)
-        writeToFile(`${responses.filename}.md`, markdown);
-    })
+        writeToFile(`README.md`, markdown);
+    });
 }
 
 // Function call to initialize app

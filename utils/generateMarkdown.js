@@ -4,7 +4,7 @@ function renderLicenseBadge(license) {
   if (!license) {
     return '';
   }
-  else return `[![License](https://img.shields.io/badge/License--]`
+  else return `[![License](https://img.shields.io/badge/License--)]`
 }
 
 // TODO: Create a function that returns the license link
@@ -28,33 +28,36 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `
 
+  # ${data.title}
+  ## Description
+  * ${data.description}
 
-## Description
-* ${data.description}
+  ## Table of Contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * ${renderLicenseBadge(data.license)}
+  * [License](#license)
+  * [Contribution](#contribution)
+  * [Tests](#tests)
+  * ${data.tableOfContents}
 
-
-## Table of Contents
-* [Description](#description)
-* [Installation](#installation)
-* [Usage](#usage)
-* ${renderLicenseBadge(data.license)}
-* [License](#license)
-* [Contribution](#contribution)
-* [Tests](#tests)
-* ${data.tableOfContents}
-
-## Installation
-* ${data.installation}
-## Usage
-* ${data.usage}
-## License
-* ${renderLicenseBadge(data.license)}
-## Contributions
-* ${data.contribution}}
-## Tests
-* ${data.tests}
+  ## Installation
+  * ${data.installation}
+  ## Usage
+  * ${data.usage}
+  ## Contributions
+  * ${data.contributions}}
+  ## Tests
+  * ${data.tests}
+  ## Credits
+  * ${data.credits}
+  ## License
+  * ${renderLicenseBadge(data.license)}
+  ## Assets
+  * ${data.assets}
 
 `;
 }
