@@ -20,7 +20,7 @@
   ## Contributions
   * Please contact developer --}
   ## Tests
-  * undefined
+  * [Tutorial Video](https://drive.google.com/file/d/1kj-Aqr6gFldDGifUUCs2EuAHHFEHwEcW/view)
   ## Credits
   * Phillip Loy tutor helped with questions array from prompt to questions
   ## License
